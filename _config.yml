@@ -1,0 +1,84 @@
+### Site Settings ###
+title               : Activate Windows
+description         : >-
+                      Red Teaming, Windows, Writeups/Walkthough. 
+baseurl             : ""                     # Change to empty quotes if you are hosting your site at <your-username>.github.io directly
+repository          : activatewindows/activatewindows     # Change to <your-username>/<your-username>.github.io (or remove it if you don't need remote projects)
+remote_theme        : YoussefRaafatNasry/portfolYOU
+open_new_tab        : false                             # Opens external URLs in new tab (works for posts, projects and navbar only)
+
+
+### Plugins ###
+plugins:
+  - jemoji
+
+
+### Navbar Settings ###
+nav_exclude:                                            # The following paths are excluded from navbar
+  - pages/tags.html
+  - pages/404.html
+  - pages/index.md
+
+
+### Author Info ###
+author:
+  name              : Activate Windows
+  image             : https://i.postimg.cc/rsy6s0b3/cf63547fadc1aa6e897a62291e0cb124.jpg
+# behance           : your_username
+# dribbble          : your_username
+  email             : ActivateWind0ws@protonmail.com
+# facebook          : your_username
+  github            : ActivateWind0ws
+# gitlab            : your_username
+# instagram         : your_username
+# kaggle            : your_username
+# linkedin          : your_username
+# medium            : your_username
+# soundcloud        : your_username
+# spotify           : your_username
+# stackoverflow     : your_user_id
+# tumblr            : your_username.tumblr.com
+# twitch            : your_username
+# twitter           : your_username
+# vimeo             : your_username
+# youtube           : your_channel_name
+# keybase           : your_username
+
+
+### Posts ###
+permalink: /blog/:title
+
+
+### Collections ###
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name
+
+
+### Disqus ###
+disqus:
+  shortname: AW                     # Your website Shortname on disqus
+
+
+
+### Defaults for collections ###
+defaults:
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "page"
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      comments: false                                   # Set to true to enable disqus comments
+
+
+### Exclude from processing ###
+exclude:
+  - README.md
+  - CONTRIBUTING.md
+  - LICENSE
+  - "*.log"
