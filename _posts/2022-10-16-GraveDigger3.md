@@ -2,7 +2,7 @@
 title: Grave Digger 3
 tags: [DeadFace, ctf]
 color: success 
-description: Writeup for Grave Digger 3 DeadFace CTF event.
+description: Writeup for Grave Digger 3 from DeadFace CTF event.
 ---
 
 # Writeup for Grave Digger 3

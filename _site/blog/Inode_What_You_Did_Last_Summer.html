@@ -21,12 +21,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Blog">
-  <meta property="og:description" content="Red Teaming, Windows, Writeups/Walkthrough. ">
+  <meta property="og:title" content="Inode What You Did Last Summer">
+  <meta property="og:description" content="Writeup for Inode What You Did Last Summer from DeadFace CTF event.">
   <meta property="og:image" content="https://i.postimg.cc/rsy6s0b3/cf63547fadc1aa6e897a62291e0cb124.jpg">
 
-  <title>Blog</title>
-  <meta name="description" content="Red Teaming, Windows, Writeups/Walkthrough. ">
+  <title>Inode What You Did Last Summer</title>
+  <meta name="description" content="Writeup for Inode What You Did Last Summer from DeadFace CTF event.">
 
   <link rel="shortcut icon" type="image/x-icon" href="/assets/favicon.ico">
 
@@ -72,96 +72,57 @@
   </div>
 
 </nav>
-    <!-- Simple-Jekyll-Search https://github.com/christian-fei/Simple-Jekyll-Search -->
+    <div class="col-lg-10 mx-auto mt-5 markdown-body">
+  <h1><b>Inode What You Did Last Summer</b></h1>
 
-<div class="input-group mt-5 px-3">
-  <input id="search-input" type="text" class="form-control search-box" placeholder="Search posts..">
-  <div class="input-group-append">
-    <span class="input-group-text border border-primary bg-primary text-white">
-      <i class="fas fa-search"></i>
-    </span>
-  </div>
-  <button class="btn btn-outline-primary ml-1" onclick="location.href = '/blog/tags';">
-    <i class="fas fa-tags"></i>
-  </button>
-</div>
-<ul class="px-3" id="results-container"></ul>
+<p class="post-metadata text-muted">
+  16 October 2022 -  
+  <b>less than 1 min read time</b>
 
-<script src="https://cdn.rawgit.com/christian-fei/Simple-Jekyll-Search/master/dest/simple-jekyll-search.min.js"></script>
-<script>
-  var sjs = SimpleJekyllSearch({
-        searchInput: document.getElementById('search-input'),
-        resultsContainer: document.getElementById('results-container'),
-        searchResultTemplate: '<a href="{url}" class="list-group-item list-group-item-action">{title}</a>',
-        noResultsText: '<li class="list-group-item list-group-item-action disabled">No results found</li>',
-        json: '/search.json'
-      })
-</script>
-<div class="card-group mt-2">
+  <br>Tags: 
+    
+    <a class="text-decoration-none no-underline" href="/blog/tags#deadface">
+      <span class="tag badge badge-pill text-primary border border-primary">DeadFace</span>
+    </a>
+    
+    <a class="text-decoration-none no-underline" href="/blog/tags#ctf">
+      <span class="tag badge badge-pill text-primary border border-primary">ctf</span>
+    </a>
+    
+    <a class="text-decoration-none no-underline" href="/blog/tags#forensics">
+      <span class="tag badge badge-pill text-primary border border-primary">forensics</span>
+    </a>
+    </p>
 
-  
-    <div class="col-lg-6 my-3 wow animated fadeIn" data-wow-delay=".15s">
-  <a href="/blog/Cracking_NTLM" class="post card border border-warning">
-    <div class="card-body text-themed">
-      <h3 class="card-title">Cracking NTLM</h3>
-      <p class="card-text">
-        
-        <span class="badge badge-warning">DeadFace</span>
-        
-        <span class="badge badge-warning">ctf</span>
-        
-        <span class="badge badge-warning">cracking</span>
-        
-      </p>
-      <p class="card-text">Writeup for Cracking NTLM from DeadFace CTF event.</p>
-    </div>
-    <div class="card-footer text-themed">
-      17 October 2022
-    </div>
-  </a>
-</div>
-  
-    <div class="col-lg-6 my-3 wow animated fadeIn" data-wow-delay=".15s">
-  <a href="/blog/Inode_What_You_Did_Last_Summer" class="post card border border-primary">
-    <div class="card-body text-themed">
-      <h3 class="card-title">Inode What You Did Last Summer</h3>
-      <p class="card-text">
-        
-        <span class="badge badge-primary">DeadFace</span>
-        
-        <span class="badge badge-primary">ctf</span>
-        
-        <span class="badge badge-primary">forensics</span>
-        
-      </p>
-      <p class="card-text">Writeup for Inode What You Did Last Summer from DeadFace CTF event.</p>
-    </div>
-    <div class="card-footer text-themed">
-      16 October 2022
-    </div>
-  </a>
-</div>
-  
-    <div class="col-lg-6 my-3 wow animated fadeIn" data-wow-delay=".15s">
-  <a href="/blog/GraveDigger3" class="post card border border-success">
-    <div class="card-body text-themed">
-      <h3 class="card-title">Grave Digger 3</h3>
-      <p class="card-text">
-        
-        <span class="badge badge-success">DeadFace</span>
-        
-        <span class="badge badge-success">ctf</span>
-        
-      </p>
-      <p class="card-text">Writeup for Grave Digger 3 from DeadFace CTF event.</p>
-    </div>
-    <div class="card-footer text-themed">
-      16 October 2022
-    </div>
-  </a>
-</div>
-  
-  
+<h1 id="writeup-for-inode-what-you-did-last-summer">Writeup for Inode What You Did Last Summer</h1>
+
+<h2 id="description">Description</h2>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>One of the security researchers at ESU needs help in their forensics of the ESU attack that occurred on 2022-07-27. They are asking if you can help them find the Inode of the file that was compromised and enabled the attackers to escalate their privileges to root.
+
+Submit the flag as flag{inode_value}.
+</code></pre></div></div>
+
+<p>The download zip files has an Ubuntu Generic zip file and a memory dump, which directly hints to add a plugin of that zip file. After adding, we analyze the memory dump with volatilty.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>» python2 /opt/volatility/vol.py <span class="nt">--profile</span><span class="o">=</span>LinuxUbuntu_5_4_0-122-genericx64 <span class="nt">-f</span> esu-mem-20220727154029.dmp linux_enumerate_files
+
+<span class="nt">---</span>
+
+0xffff959183253cd8                    788070 /opt/backup.py
+<span class="nt">---</span>
+</code></pre></div></div>
+
+<h1 id="flag">Flag</h1>
+
+<p><code class="language-plaintext highlighter-rouge">flag{0xffff959183253cd8}</code></p>
+
+<p><em>If the <code class="language-plaintext highlighter-rouge">/opt/backup.py</code> doesn’t make sense, all the challs are related to each other. One of the chall, we have to find the file for the flag.</em></p>
+
+<h4 id="author-zexionx00">Author: <a href="https://twitter.com/zexionx00">zexionx00</a></h4>
+
+
+
 </div>
   </main>
   <footer class="mt-auto py-3 text-center">
