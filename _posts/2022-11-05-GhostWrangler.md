@@ -1,8 +1,8 @@
 ---
 title: Ghost Wrangler
-tags: [DeadFace, ctf]
+tags: [hacktheboo, ctf]
 color: warning 
-description: Writeup for Ghost Wrangler from DeadFace CTF event.
+description: Writeup for Ghost Wrangler from HackTheBoo CTF event.
 ---
 # Writeup for Ghost Wrangler
 

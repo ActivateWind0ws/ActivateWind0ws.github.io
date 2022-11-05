@@ -1,8 +1,8 @@
 ---
 title: EncodedPayload
-tags: [DeadFace, ctf]
+tags: [hacktheboo, ctf]
 color: success 
-description: Writeup for EncodedPayload from DeadFace CTF event.
+description: Writeup for EncodedPayload from HackTheBoo CTF event.
 ---
 # Writeup for EncodedPayload
 

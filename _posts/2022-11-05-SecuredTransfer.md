@@ -1,8 +1,8 @@
 ---
 title: Secured Transfer
-tags: [DeadFace, ctf]
+tags: [hacktheboo, ctf]
 color: warning 
-description: Writeup for Secured Transfer from DeadFace CTF event.
+description: Writeup for Secured Transfer from HackTheBoo CTF event.
 ---
 # Writeup for Secured Transfer
 
